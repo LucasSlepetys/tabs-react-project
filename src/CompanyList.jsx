@@ -1,12 +1,12 @@
-function CompanyList({ data, currentId, setCurrentId }) {
+function CompanyList({ data, currentIndex, setCurrentIndex }) {
   return (
     <div>
-      {data.map((person) => {
+      {data.map((person, index) => {
         return (
           <h5
             key={person.id}
             style={
-              person.id === currentId
+              index === currentIndex
                 ? {
                     background: 'black',
                     color: 'white',
@@ -22,7 +22,7 @@ function CompanyList({ data, currentId, setCurrentId }) {
                     margin: '10px',
                   }
             }
-            onClick={() => setCurrentId(person.id)}
+            onClick={() => setCurrentIndex(index)}
           >
             {person.company}
           </h5>
