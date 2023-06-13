@@ -1,4 +1,5 @@
 import { FaBeer } from 'react-icons/fa';
+import { v4 as uuidv4 } from 'uuid';
 
 function JobInfo({ title, company, dates, duties }) {
   return (
@@ -9,10 +10,11 @@ function JobInfo({ title, company, dates, duties }) {
         <h5>{dates}</h5>
       </div>
       <div>
-        {duties.map((duty, index) => {
+        {duties.map((duty) => {
+          const id = uuidv4();
           return (
-            <div key={index}>
-              <FaBeer />
+            <div key={id}>
+              <FaBeer className='job-icon' />
               <span>{duty}</span>
             </div>
           );
